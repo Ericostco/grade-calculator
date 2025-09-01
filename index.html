@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="animation-wrapper">
+      <img src="img/entrance.jpg" alt="" />
+    </section>
+    <main>
+      <h1>Grade Calculator</h1>
+      <section class="grade-item-generator">
+        <section class="sorting-btn">
+          <button class="sort-descending btn">
+            Sort Descending<i class="fa-solid fa-sort-down"></i>
+          </button>
+          <button class="sort-ascending btn">
+            Sort Ascending<i class="fa-solid fa-sort-up"></i>
+          </button>
+        </section>
+
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+        <button type="submit" class="btn add-btn">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </section>
+      <section class="result">
+        <p>
+          Your semester <br />
+          GPA
+        </p>
+        <h2 id="gpa">0.00</h2>
+      </section>
+    </main>
+    <datalist id="course-names">
+      <option value="Introduction to Computer Science"></option>
+      <option value="Data Structures"></option>
+      <option value="Algorithms"></option>
+      <option value="Object-Oriented Programming"></option>
+      <option value="Operating Systems"></option>
+      <option value="Computer Organization"></option>
+      <option value="Database Systems"></option>
+      <option value="Computer Networks"></option>
+      <option value="Software Engineering"></option>
+      <option value="Artificial Intelligence"></option>
+    </datalist>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
