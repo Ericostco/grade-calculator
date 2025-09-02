@@ -1,7 +1,7 @@
 # 🎓 Grade Calculator
 
 [🔗 View on GitHub](https://github.com/Ericostco/grade-calculator)  
-<a href="https://ericostco.github.io/grade-calculator/" target="_">🚀 Live Demo</a>
+<a href="https://ericostco.github.io/grade-calculator/" target="_blank">🚀 Live Demo</a>
 [🚀 Live Demo](https://ericostco.github.io/grade-calculator/)
 
 ## 📌 Project Description
