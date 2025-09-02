@@ -14,37 +14,34 @@
 //     { opacity: 0, ease: Power2.easeInOut, zIndex: -1 }
 //   );
 
-let btn = document.querySelectorAll(".btn");
-
-btn.forEach((button) => {
-  button.addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
+  if (e.target.closest("button")) {
     e.preventDefault();
-  });
+  }
 });
 
-window.addEventListener("keypress", (e) => {
+document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
   }
 });
 
-let courseCredit = document.querySelectorAll(".course-credit");
-let courseGrade = document.querySelectorAll(".course-grade");
-
-courseCredit.forEach((creditField) => {
-  creditField.addEventListener("input", (e) => {
+document.addEventListener("input", (e) => {
+  if (e.target.closest("input.course-credit")) {
     calculateGPA();
-  });
+  }
 });
 
-courseGrade.forEach((gradeField) => {
-  gradeField.addEventListener("change", (e) => {
+document.addEventListener("change", (e) => {
+  if (e.target.closest("select.course-grade")) {
     calculateGPA();
-    changeSelectColor(e.target);
-  });
+    e.target.style.backgroundColor = changeSelectColor(e.target.value);
+  }
 });
 
 function calculateGPA() {
+  let courseCredit = document.querySelectorAll(".course-credit");
+  let courseGrade = document.querySelectorAll(".course-grade");
   let totalPoints = 0;
   let totalCredits = 0;
 
@@ -94,30 +91,108 @@ function convertGrade(grade) {
   }
 }
 
-function changeSelectColor(target) {
-  if (target.value === "A" || target.value === "A-") {
-    target.style.backgroundColor = "#4caf50";
-  } else if (
-    target.value === "B+" ||
-    target.value === "B" ||
-    target.value === "B-"
-  ) {
-    target.style.backgroundColor = "#ffeb3b";
-  } else if (
-    target.value === "C+" ||
-    target.value === "C" ||
-    target.value === "C-"
-  ) {
-    target.style.backgroundColor = "#ff9800";
-  } else if (
-    target.value === "D+" ||
-    target.value === "D" ||
-    target.value === "D-"
-  ) {
-    target.style.backgroundColor = "#f44336";
-  } else if (target.value === "F") {
-    target.style.backgroundColor = "#a2a0a0ff";
+function changeSelectColor(grade) {
+  if (grade === "A" || grade === "A-") {
+    return "#4caf50";
+  } else if (grade === "B+" || grade === "B" || grade === "B-") {
+    return "#ffeb3b";
+  } else if (grade === "C+" || grade === "C" || grade === "C-") {
+    return "#ff9800";
+  } else if (grade === "D+" || grade === "D" || grade === "D-") {
+    return "#f44336";
+  } else if (grade === "F") {
+    return "#a2a0a0ff";
   } else {
-    target.style.backgroundColor = "#ffffff";
+    return "#ffffff";
   }
 }
+
+let addBtn = document.querySelector(".add-btn");
+addBtn.addEventListener("click", () => {
+  // Create a new form element
+  let newForm = document.createElement("form");
+  newForm.classList.add("grade-item-form");
+
+  // Create the course name input
+  let courseNameInput = document.createElement("input");
+  courseNameInput.setAttribute("list", "course-names");
+  courseNameInput.setAttribute("type", "text");
+  courseNameInput.classList.add("course-list");
+  courseNameInput.setAttribute("name", "courseName");
+  courseNameInput.setAttribute("required", "");
+  courseNameInput.setAttribute("placeholder", "Course Name");
+
+  // Create the course credit input
+  let courseCreditInput = document.createElement("input");
+  courseCreditInput.setAttribute("type", "number");
+  courseCreditInput.classList.add("course-credit");
+  courseCreditInput.setAttribute("name", "courseCredit");
+  courseCreditInput.setAttribute("min", "0");
+  courseCreditInput.setAttribute("max", "6");
+  courseCreditInput.setAttribute("required", "");
+  courseCreditInput.setAttribute("placeholder", "Credit");
+
+  // Create the course grade select
+  let courseGradeSelect = document.createElement("select");
+  courseGradeSelect.classList.add("course-grade");
+  courseGradeSelect.setAttribute("name", "grade");
+  courseGradeSelect.setAttribute("required", "");
+
+  // Create the grade options
+  let grades = [
+    "",
+    "A",
+    "A-",
+    "B+",
+    "B",
+    "B-",
+    "C+",
+    "C",
+    "C-",
+    "D+",
+    "D",
+    "D-",
+    "F",
+  ];
+  grades.forEach((grade) => {
+    let option = document.createElement("option");
+    option.setAttribute("value", grade);
+    option.innerText = grade;
+    courseGradeSelect.appendChild(option);
+  });
+
+  // Create the delete button
+  let deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("btn", "delete-btn");
+  deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
+  // Append all elements to the new form
+  newForm.appendChild(courseNameInput);
+  newForm.appendChild(courseCreditInput);
+  newForm.appendChild(courseGradeSelect);
+  newForm.appendChild(deleteBtn);
+
+  // Append the new form to the grade item generator
+  document.querySelector(".grade-item-generator").appendChild(newForm);
+
+  // Update element collections
+  btn = document.querySelectorAll(".btn");
+  courseCredit = document.querySelectorAll(".course-credit");
+  courseGrade = document.querySelectorAll(".course-grade");
+
+  // Add event listener to new delete button
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+
+  // Add event listener to new credit input
+  courseCreditInput.addEventListener("input", (e) => {
+    calculateGPA();
+  });
+
+  // Add event listener to new grade select
+  courseGradeSelect.addEventListener("change", (e) => {
+    calculateGPA();
+    changeSelectColor(e.target);
+  });
+});

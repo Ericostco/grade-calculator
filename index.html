@@ -19,125 +19,130 @@
     </section>
     <main>
       <h1>Grade Calculator</h1>
-      <section class="grade-item-generator">
-        <section class="sorting-btn">
-          <button class="sort-descending btn">
-            Sort Descending<i class="fa-solid fa-sort-down"></i>
-          </button>
-          <button class="sort-ascending btn">
-            Sort Ascending<i class="fa-solid fa-sort-up"></i>
-          </button>
-        </section>
 
-        <form class="grade-item-form">
-          <input
-            list="course-names"
-            type="text"
-            class="course-list"
-            required
-            placeholder="Course Name"
-          />
-          <input
-            type="number"
-            class="course-credit"
-            min="0"
-            max="6"
-            required
-            placeholder="Credit"
-          />
-          <select class="course-grade" name="grade" required>
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D+">D+</option>
-            <option value="D">D</option>
-            <option value="D-">D-</option>
-            <option value="F">F</option>
-          </select>
-          <button class="btn delete-btn">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </form>
-        <form class="grade-item-form">
-          <input
-            list="course-names"
-            type="text"
-            class="course-list"
-            required
-            placeholder="Course Name"
-          />
-          <input
-            type="number"
-            class="course-credit"
-            min="0"
-            max="6"
-            required
-            placeholder="Credit"
-          />
-          <select class="course-grade" name="grade" required>
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D+">D+</option>
-            <option value="D">D</option>
-            <option value="D-">D-</option>
-            <option value="F">F</option>
-          </select>
-          <button class="btn delete-btn">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </form>
-        <form class="grade-item-form">
-          <input
-            list="course-names"
-            type="text"
-            class="course-list"
-            required
-            placeholder="Course Name"
-          />
-          <input
-            type="number"
-            class="course-credit"
-            min="0"
-            max="6"
-            required
-            placeholder="Credit"
-          />
-          <select class="course-grade" name="grade" required>
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D+">D+</option>
-            <option value="D">D</option>
-            <option value="D-">D-</option>
-            <option value="F">F</option>
-          </select>
-          <button class="btn delete-btn">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </form>
-        <button type="submit" class="btn add-btn">
-          <i class="fa-solid fa-plus"></i>
+      <section class="sorting-btn">
+        <button class="sort-descending btn">
+          Sort Descending<i class="fa-solid fa-sort-down"></i>
+        </button>
+        <button class="sort-ascending btn">
+          Sort Ascending<i class="fa-solid fa-sort-up"></i>
         </button>
       </section>
+
+      <section class="grade-item-generator">
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            name="courseName"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            name="courseCredit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+        <form class="grade-item-form">
+          <input
+            list="course-names"
+            type="text"
+            class="course-list"
+            required
+            placeholder="Course Name"
+          />
+          <input
+            type="number"
+            class="course-credit"
+            min="0"
+            max="6"
+            required
+            placeholder="Credit"
+          />
+          <select class="course-grade" name="grade" required>
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+          </select>
+          <button class="btn delete-btn">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+      </section>
+
+      <button type="submit" class="btn add-btn">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
       <section class="result">
         <p>
           Your semester <br />
