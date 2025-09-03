@@ -36,6 +36,7 @@ form {
   .course-credit {
     width: 5rem;
   }
+
   input,
   select,
   button {
@@ -92,6 +93,22 @@ form {
   &:hover {
     background-color: darken(#939393, 10%);
   }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+  transform-origin: center;
 }
 
 .dropdown-menu {
@@ -156,4 +173,20 @@ h1 {
   100% {
     border-color: #ff0000;
   }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.scale-out {
+  animation: scaleOut 0.3s forwards;
+  transform-origin: center;
 }

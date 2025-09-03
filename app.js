@@ -18,6 +18,23 @@ document.addEventListener("click", (e) => {
   if (e.target.closest("button")) {
     e.preventDefault();
   }
+  if (e.target.closest(".delete-btn")) {
+    let deleteForm = e.target.closest(".grade-item-form");
+    deleteForm.classList.add("scale-out");
+    deleteForm.addEventListener("animationend", () => {
+      deleteForm.remove();
+      calculateGPA();
+    });
+  }
+  if (e.target.closest(".add-btn")) {
+    createNewForm();
+  }
+  if (e.target.closest(".sort-descending")) {
+    sortFormsDescending();
+  }
+  if (e.target.closest(".sort-ascending")) {
+    sortFormsAscending();
+  }
 });
 
 document.addEventListener("keydown", (e) => {
@@ -107,9 +124,7 @@ function changeSelectColor(grade) {
   }
 }
 
-let addBtn = document.querySelector(".add-btn");
-addBtn.addEventListener("click", () => {
-  // Create a new form element
+function createNewForm() {
   let newForm = document.createElement("form");
   newForm.classList.add("grade-item-form");
 
@@ -173,6 +188,13 @@ addBtn.addEventListener("click", () => {
   newForm.appendChild(courseGradeSelect);
   newForm.appendChild(deleteBtn);
 
+  // Add animation class to the new form
+  newForm.classList.add("scale-in");
+
   // Append the new form to the grade item generator
   document.querySelector(".grade-item-generator").appendChild(newForm);
-});
+}
+
+function sortFormsDescending() {}
+
+function sortFormsAscending() {}
