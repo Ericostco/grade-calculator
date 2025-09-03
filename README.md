@@ -8,12 +8,12 @@ A simple web-based GPA calculator with interactive UI.
 
 - Users can **select/type course names**, input course **credits**, and **choose grades**.  
 - Users can **add or delete course forms dynamically**.  
-- The **GPA is calculated and displayed instantly** on the page.  
-
+- The **GPA is calculated and displayed instantly** on the page.
+- 
 ---
 
 ## 🖼️ Demo Preview
-<img width="1920" height="964" alt="image" src="https://github.com/user-attachments/assets/9a590730-2011-4558-86bd-2bb8809e58b2" />
+<img width="1920" height="898" alt="image" src="https://github.com/user-attachments/assets/591fd793-fdd3-439f-97f8-e4f6fd62b9de" />
 
 ---
 
@@ -30,5 +30,3 @@ A simple web-based GPA calculator with interactive UI.
 - Practiced **Flexbox** for responsive web design (RWD).  
 - Created custom animations with **CSS `@keyframes`**.  
 - Utilized **`forEach`** to attach event listeners on buttons, inputs, and selects for interactive behavior.  
-
----
