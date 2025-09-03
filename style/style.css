@@ -19,15 +19,36 @@ main,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
-form,
-.sorting-btn {
+form {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  width: 100%;
+}
+form .course-name {
+  width: 20rem;
+}
+form .course-credit {
+  width: 5rem;
+}
+form input,
+form select,
+form button {
+  height: 2.5rem;
+  display: block;
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: none;
+}
+form input:focus,
+form select:focus,
+form button:focus {
+  outline: none;
 }
 
 .animation-wrapper {
@@ -49,6 +70,7 @@ form,
   padding: 0.5rem 1rem;
   border-radius: 5px;
   border: none;
+  color: white;
 }
 .btn:hover {
   cursor: pointer;
@@ -64,15 +86,34 @@ form,
 .delete-btn .fa-trash {
   z-index: -1;
   display: block;
-  color: white;
 }
 
-main h1 {
+.add-btn {
+  background-color: #575757;
+}
+.add-btn:hover {
+  background-color: rgb(121.5, 121.5, 121.5);
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+.dropdown-menu li {
+  background-color: #373737;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-menu li:hover {
+  background-color: rgb(121.5, 121.5, 121.5);
+}
+
+h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-main .result {
+
+.result {
   margin-top: 1.5rem;
   width: 230px;
   height: 230px;
@@ -81,30 +122,14 @@ main .result {
   border-radius: 50%;
   animation: rgb 10s infinite;
 }
-main .result h2 {
+.result h2 {
   font-size: 2.5rem;
   margin: 1rem;
 }
-main .result p {
+.result p {
   font-size: 1.3rem;
   text-align: center;
   line-height: 2rem;
-}
-
-form .course-list {
-  width: 15rem;
-}
-form input,
-form select {
-  display: block;
-  margin: 0.3rem 0.1rem;
-  padding: 0.5rem;
-  border-radius: 3px;
-  border: none;
-}
-form input:focus,
-form select:focus {
-  outline: none;
 }
 
 @keyframes rgb {

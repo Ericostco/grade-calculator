@@ -115,9 +115,9 @@ addBtn.addEventListener("click", () => {
 
   // Create the course name input
   let courseNameInput = document.createElement("input");
-  courseNameInput.setAttribute("list", "course-names");
+  courseNameInput.setAttribute("list", "course-list");
   courseNameInput.setAttribute("type", "text");
-  courseNameInput.classList.add("course-list");
+  courseNameInput.classList.add("course-name");
   courseNameInput.setAttribute("name", "courseName");
   courseNameInput.setAttribute("required", "");
   courseNameInput.setAttribute("placeholder", "Course Name");
@@ -154,6 +154,7 @@ addBtn.addEventListener("click", () => {
     "D-",
     "F",
   ];
+
   grades.forEach((grade) => {
     let option = document.createElement("option");
     option.setAttribute("value", grade);
@@ -174,25 +175,4 @@ addBtn.addEventListener("click", () => {
 
   // Append the new form to the grade item generator
   document.querySelector(".grade-item-generator").appendChild(newForm);
-
-  // Update element collections
-  btn = document.querySelectorAll(".btn");
-  courseCredit = document.querySelectorAll(".course-credit");
-  courseGrade = document.querySelectorAll(".course-grade");
-
-  // Add event listener to new delete button
-  deleteBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-  });
-
-  // Add event listener to new credit input
-  courseCreditInput.addEventListener("input", (e) => {
-    calculateGPA();
-  });
-
-  // Add event listener to new grade select
-  courseGradeSelect.addEventListener("change", (e) => {
-    calculateGPA();
-    changeSelectColor(e.target);
-  });
 });
