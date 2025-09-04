@@ -1,4 +1,4 @@
-// let animationWrapper = document.querySelector(".animation-wrapper");
+// const animationWrapper = document.querySelector(".animation-wrapper");
 // const timeLine = new TimelineMax();
 // timeLine
 //   .fromTo(
@@ -18,20 +18,24 @@ document.addEventListener("click", (e) => {
   if (e.target.closest("button")) {
     e.preventDefault();
   }
+
   if (e.target.closest(".delete-btn")) {
     let deleteForm = e.target.closest(".grade-item-form");
     deleteForm.classList.add("scale-out");
     deleteForm.addEventListener("animationend", () => {
       deleteForm.remove();
-      calculateGPA();
+      document.querySelector("#gpa").innerText = calculateGPA();
     });
   }
+
   if (e.target.closest(".add-btn")) {
     createNewForm();
   }
+
   if (e.target.closest(".sort-descending")) {
     sortFormsDescending();
   }
+
   if (e.target.closest(".sort-ascending")) {
     sortFormsAscending();
   }
@@ -45,36 +49,37 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("input", (e) => {
   if (e.target.closest("input.course-credit")) {
-    calculateGPA();
+    document.querySelector("#gpa").innerText = calculateGPA();
   }
 });
 
 document.addEventListener("change", (e) => {
   if (e.target.closest("select.course-grade")) {
-    calculateGPA();
+    document.querySelector("#gpa").innerText = calculateGPA();
     e.target.style.backgroundColor = changeSelectColor(e.target.value);
   }
 });
 
 function calculateGPA() {
-  let courseCredit = document.querySelectorAll(".course-credit");
-  let courseGrade = document.querySelectorAll(".course-grade");
+  const courseCredit = document.querySelectorAll(".course-credit");
+  const courseGrade = document.querySelectorAll(".course-grade");
   let totalPoints = 0;
   let totalCredits = 0;
 
   courseCredit.forEach((credit, index) => {
     let grade = courseGrade[index].value;
-    if (grade !== "" && credit.value !== "") {
-      totalPoints += convertGrade(grade) * credit.valueAsNumber;
-    }
-    if (credit.valueAsNumber > 0) {
-      totalCredits += credit.valueAsNumber;
+    let creditValue = credit.valueAsNumber;
+
+    if (!isNaN(creditValue) && grade !== "") {
+      console.log("oh my god");
+      totalPoints += creditValue * convertGrade(grade);
+      totalCredits += creditValue;
     }
   });
 
-  gpa =
-    totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : (0).toFixed(2);
-  document.querySelector("#gpa").innerText = gpa;
+  return totalCredits > 0
+    ? (totalPoints / totalCredits).toFixed(2)
+    : (0).toFixed(2);
 }
 
 function convertGrade(grade) {

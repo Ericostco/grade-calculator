@@ -110,15 +110,14 @@ form button:focus {
   transform-origin: center;
 }
 
-.dropdown-menu {
+ul.dropdown-menu {
+  border: none;
   padding: 0;
 }
-.dropdown-menu li {
+ul.dropdown-menu li {
   background-color: #373737;
-  margin: 0;
-  padding: 0;
 }
-.dropdown-menu li:hover {
+ul.dropdown-menu li:hover {
   background-color: rgb(121.5, 121.5, 121.5);
 }
 

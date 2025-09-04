@@ -111,12 +111,11 @@ form {
   transform-origin: center;
 }
 
-.dropdown-menu {
+ul.dropdown-menu {
+  border: none;
   padding: 0;
   li {
     background-color: #373737;
-    margin: 0;
-    padding: 0;
     &:hover {
       background-color: darken(#939393, 10%);
     }
